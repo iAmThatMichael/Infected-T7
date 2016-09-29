@@ -1,0 +1,4 @@
+>mode,zm
+>type,common
+
+#include "zm_mod.class"

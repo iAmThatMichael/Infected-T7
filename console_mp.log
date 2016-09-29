@@ -1,0 +1,481 @@
+Build 0
+logfile opened on Mon Sep 26 19:41:27 2016
+
+]/con_channelshow *
+execing gamedata/configs/mp/mp_default_gamesettings.cfg from fastfile
+execing gamedata/gamesettings/mp/gamesettings_default.cfg from fastfile
+execing gamedata/gamesettings/mp/gamesettings_tdm.cfg from fastfile
+Error: '24' is not a valid value for dvar 'sv_maxclients'
+  Domain is any integer from 1 to 18
+execing gamedata/configs/mp/mp_default_gamesettings.cfg from fastfile
+execing gamedata/gamesettings/mp/gamesettings_default.cfg from fastfile
+execing gamedata/gamesettings/mp/gamesettings_tdm.cfg from fastfile
+Error: '24' is not a valid value for dvar 'sv_maxclients'
+  Domain is any integer from 1 to 18
+CommonFastfileLoad: CURRENT mode fastfile STARTING LOAD.
+FastFileLoad: Setting en_mp_patch to XZONE_LOADING.
+Loading fastfile 'en_mp_patch'
+execing gamedata/gamesettings/mp/gamesettings_default.cfg from fastfile
+SOUND Adding Bank mp_patch.en 1114 normal
+execing gamedata/gamesettings/mp/gamesettings_tdm.cfg from fastfile
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/mp_patch.xpak
+Added xpak file: mp_initial (1298 items)
+Added XPaks for en_mp_patch, 206ms
+Loading sounds for 'en_mp_patch'
+SOUND load state for mp_patch.en changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/en/mp_patch.en.sabs 879
+SOUND load state for mp_patch.en changed from 1 to 2
+SOUND load state for mp_patch.en changed from 2 to 3
+SOUND load state for mp_patch.en changed from 3 to 4
+SOUND load state for mp_patch.en changed from 4 to 5
+SOUND load state for mp_patch.en changed from 5 to 6
+SOUND load state for mp_patch.en changed from 6 to 7
+Loaded sounds for 'en_mp_patch' 758ms
+FastFileLoad: Setting en_mp_patch to XZONE_LOADED in 1268ms.
+FastFileLoad: Setting mp_patch to XZONE_LOADING.
+Loading fastfile 'mp_patch'
+SOUND Adding Bank mp_patch.all 1115 normal
+Added XPaks for mp_patch, 0ms
+Loading sounds for 'mp_patch'
+SOUND load state for mp_patch.all changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_patch.all.sabs 21
+SOUND load state for mp_patch.all changed from 1 to 2
+SOUND load state for mp_patch.all changed from 2 to 3
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_patch.all.sabl 16
+SOUND load state for mp_patch.all changed from 3 to 4
+SOUND load state for mp_patch.all changed from 4 to 5
+SOUND loaded alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_patch.all.sabl 0000000CEC171D00 0000000CEC173000
+SOUND load state for mp_patch.all changed from 5 to 6
+SOUND load state for mp_patch.all changed from 6 to 7
+Loaded sounds for 'mp_patch' 1152ms
+FastFileLoad: Setting mp_patch to XZONE_LOADED in 1766ms.
+FastFileLoad: Setting en_mp_common to XZONE_LOADING.
+Loading fastfile 'en_mp_common'
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/en_mp_common.xpak
+SOUND Adding Bank mp_common.en 1014 patch
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/mp_common.xpak
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/en_mp_common_d.xpak
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/mp_common_d.xpak
+Added XPaks for en_mp_common, 262ms
+Loading sounds for 'en_mp_common'
+SOUND load state for mp_common.en patch changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/en/mp_common.en.p.sabs 29
+SOUND load state for mp_common.en patch changed from 1 to 2
+SOUND load state for mp_common.en patch changed from 2 to 3
+SOUND load state for mp_common.en patch changed from 3 to 4
+SOUND load state for mp_common.en patch changed from 4 to 5
+SOUND load state for mp_common.en patch changed from 5 to 6
+SOUND load state for mp_common.en patch changed from 6 to 7
+SOUND load state for mp_common.en changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/en/mp_common.en.sabs 7923
+SOUND load state for mp_common.en changed from 1 to 2
+SOUND load state for mp_common.en changed from 2 to 3
+SOUND load state for mp_common.en changed from 3 to 4
+SOUND load state for mp_common.en changed from 4 to 5
+SOUND load state for mp_common.en changed from 5 to 6
+SOUND load state for mp_common.en changed from 6 to 7
+Loaded sounds for 'en_mp_common' 1287ms
+FastFileLoad: Setting en_mp_common to XZONE_LOADED in 1876ms.
+FastFileLoad: Setting mp_common to XZONE_LOADING.
+Loading fastfile 'mp_common'
+]/logfile 1
+SOUND Adding Bank mp_common.all 1015 patch
+Added XPaks for mp_common, 0ms
+Loading sounds for 'mp_common'
+SOUND load state for mp_common.all patch changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.p.sabs 16
+SOUND load state for mp_common.all patch changed from 1 to 2
+SOUND load state for mp_common.all patch changed from 2 to 3
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.p.sabl 555
+SOUND load state for mp_common.all patch changed from 3 to 4
+SOUND load state for mp_common.all patch changed from 4 to 5
+SOUND loaded alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.p.sabl 0000000CEC477A00 0000000CEC47D000
+SOUND load state for mp_common.all patch changed from 5 to 6
+SOUND load state for mp_common.all patch changed from 6 to 7
+SOUND load state for mp_common.all changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.sabs 502
+SOUND load state for mp_common.all changed from 1 to 2
+SOUND load state for mp_common.all changed from 2 to 3
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.sabl 3941
+SOUND load state for mp_common.all changed from 3 to 4
+SOUND load state for mp_common.all changed from 4 to 5
+execing gamedata/gamesettings/mp/gamesettings_default.cfg from fastfile
+execing gamedata/gamesettings/mp/gamesettings_tdm.cfg from fastfile
+SOUND loaded alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_common.all.sabl 0000000CEF3C9600 0000000CEF3ED000
+SOUND load state for mp_common.all changed from 5 to 6
+SOUND load state for mp_common.all changed from 6 to 7
+Loaded sounds for 'mp_common' 7190ms
+FastFileLoad: Setting mp_common to XZONE_LOADED in 10294ms.
+FastFileLoad: Setting en_mp_mod to XZONE_LOADING.
+Loading fastfile 'en_mp_mod'
+Added xpak file: mp_mod (45 items)
+Added XPaks for en_mp_mod, 36ms
+Loading sounds for 'en_mp_mod'
+Loaded sounds for 'en_mp_mod' 0ms
+FastFileLoad: Setting en_mp_mod to XZONE_LOADED in 220ms.
+FastFileLoad: Setting mp_mod to XZONE_LOADING.
+Loading fastfile 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_player.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_spawn.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_ui.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_loadout.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_menus.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant techset asset '2d_blend#da7372ff' found in zone 'core_patch' while loading zone 'mp_mod'
+Redundant techset asset 'mc/lit_detail#e6142445' found in zone 'core_common' while loading zone 'mp_mod'
+Redundant image asset '$identitynormalmap' found in zone 'core_patch' while loading zone 'mp_mod'
+Redundant techset asset 'mc/lit_detail_alphatest#e6142445' found in zone 'core_frontend_patch' while loading zone 'mp_mod'
+Added XPaks for mp_mod, 0ms
+Loading sounds for 'mp_mod'
+Loaded sounds for 'mp_mod' 0ms
+FastFileLoad: Setting mp_mod to XZONE_LOADED in 212ms.
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_player.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_spawn.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic_ui.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_globallogic.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_loadout.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant scriptparsetree asset 'scripts/mp/gametypes/_menus.gsc' found in zone 'mp_patch' while loading zone 'mp_mod'
+Redundant techset asset '2d_blend#da7372ff' found in zone 'core_patch' while loading zone 'mp_mod'
+Redundant techset asset 'mc/lit_detail#e6142445' found in zone 'core_common' while loading zone 'mp_mod'
+Redundant image asset '$identitynormalmap' found in zone 'core_patch' while loading zone 'mp_mod'
+Redundant techset asset 'mc/lit_detail_alphatest#e6142445' found in zone 'core_frontend_patch' while loading zone 'mp_mod'
+]/lobby_setgametype infect
+]/clear
+Unloading assets from fastfile 'core_frontend' and creating default assets stubs
+SOUND Removing Bank 6 core_frontend.all patch
+SOUND Removing Bank 7 core_frontend.all 
+Unloading assets from fastfile 'en_core_frontend' and creating default assets stubs
+SOUND Removing Bank 8 core_frontend.en patch
+SOUND Removing Bank 9 core_frontend.en 
+Unloading assets from fastfile 'core_frontend_patch' and creating default assets stubs
+SOUND Removing Bank 0 core_frontend_patch.all 
+Unloading assets from fastfile 'en_core_frontend_patch' and creating default assets stubs
+SOUND Removing Bank 1 core_frontend_patch.en 
+Unloaded fastfile 'core_frontend'
+Unloaded fastfile 'en_core_frontend'
+Unloaded fastfile 'core_frontend_patch'
+Unloaded fastfile 'en_core_frontend_patch'
+Starting up server with developer TRUE
+Starting up server with developer TRUE
+FastFileLoad: Setting en_mp_nuketown_x to XZONE_LOADING.
+Loading fastfile 'en_mp_nuketown_x'
+Redundant techset asset 'mc/lit_detail_advanced_fullspec#e6142445' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant image asset 'i_t7_micro_metal_painted_rough_01_n' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant techset asset 'mc/lit_micro_tiled_plus#e6142445' found in zone 'mp_common' while loading zone 'en_mp_nuketown_x'
+Redundant image asset '$white_diffuse' found in zone 'core_pre_gfx' while loading zone 'en_mp_nuketown_x'
+Redundant image asset '$specular_mask' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant techset asset 'mc/lit_micro_tiled_advanced#e6142445' found in zone 'mp_common' while loading zone 'en_mp_nuketown_x'
+Added xpak file: en_mp_nuketown_x (122 items)
+SOUND Adding Bank mp_nuketown_x.en 1018 patch
+Added xpak file: mp_nuketown_x (3615 items)
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/en_mp_nuketown_x_d.xpak
+xpak is empty: E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/mp_nuketown_x_d.xpak
+Added XPaks for en_mp_nuketown_x, 56ms
+Loading sounds for 'en_mp_nuketown_x'
+SOUND load state for mp_nuketown_x.en patch changed from 0 to 1
+SOUND load state for mp_nuketown_x.en patch changed from 1 to 2
+SOUND load state for mp_nuketown_x.en patch changed from 2 to 3
+SOUND load state for mp_nuketown_x.en patch changed from 3 to 4
+SOUND load state for mp_nuketown_x.en patch changed from 4 to 5
+SOUND load state for mp_nuketown_x.en patch changed from 5 to 6
+SOUND load state for mp_nuketown_x.en patch changed from 6 to 7
+SOUND load state for mp_nuketown_x.en changed from 0 to 1
+SOUND load state for mp_nuketown_x.en changed from 1 to 2
+SOUND load state for mp_nuketown_x.en changed from 2 to 3
+SOUND load state for mp_nuketown_x.en changed from 3 to 4
+SOUND load state for mp_nuketown_x.en changed from 4 to 5
+SOUND load state for mp_nuketown_x.en changed from 5 to 6
+SOUND load state for mp_nuketown_x.en changed from 6 to 7
+Loaded sounds for 'en_mp_nuketown_x' 249ms
+FastFileLoad: Setting en_mp_nuketown_x to XZONE_LOADED in 540ms.
+FastFileLoad: Setting mp_nuketown_x to XZONE_LOADING.
+Loading fastfile 'mp_nuketown_x'
+Redundant image asset 'i_t7_ntx_micro_metal_scuffed_light_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant techset asset 'mc/lit_detail_alphatest#e6142445' found in zone 'mp_mod' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_o' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_c' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_s' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_robot_pod_arm_base' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_t7_ntx_plastic_base_clean_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_carbon_fiber_01_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_carbon_fiber_01_s' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_metal_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_metal' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_metal_matt' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant surfacesounddef asset 'surface_mann_limb' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant impactsoundstable asset 'mann_bounce_limb' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant physpreset asset 'ntx_mannequin_pieces' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant surfacesounddef asset 'surface_mann_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant impactsoundstable asset 'mann_bounce_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant physpreset asset 'ntx_mannequin_pieces_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_mtl_p7_ntx_mannequin_female_plastic_a' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_female_plastic_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_plastic_white' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_carbon_fiber' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_metal_inner' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_plastic_black' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+SOUND Adding Bank mp_nuketown_x.all 1019 patch
+Added XPaks for mp_nuketown_x, 0ms
+Loading sounds for 'mp_nuketown_x'
+SOUND load state for mp_nuketown_x.all patch changed from 0 to 1
+SOUND load state for mp_nuketown_x.all patch changed from 1 to 2
+SOUND load state for mp_nuketown_x.all patch changed from 2 to 3
+SOUND load state for mp_nuketown_x.all patch changed from 3 to 4
+SOUND load state for mp_nuketown_x.all patch changed from 4 to 5
+SOUND load state for mp_nuketown_x.all patch changed from 5 to 6
+SOUND load state for mp_nuketown_x.all patch changed from 6 to 7
+SOUND load state for mp_nuketown_x.all changed from 0 to 1
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_nuketown_x.all.sabs 3
+SOUND load state for mp_nuketown_x.all changed from 1 to 2
+SOUND load state for mp_nuketown_x.all changed from 2 to 3
+SOUND entry alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_nuketown_x.all.sabl 300
+SOUND load state for mp_nuketown_x.all changed from 3 to 4
+SOUND load state for mp_nuketown_x.all changed from 4 to 5
+SOUND loaded alloc E:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III/zone/snd/all/mp_nuketown_x.all.sabl 0000000CEA425F00 0000000D0890F000
+SOUND load state for mp_nuketown_x.all changed from 5 to 6
+SOUND load state for mp_nuketown_x.all changed from 6 to 7
+Loaded sounds for 'mp_nuketown_x' 689ms
+FastFileLoad: Setting mp_nuketown_x to XZONE_LOADED in 1576ms.
+Redundant techset asset 'mc/lit_detail_advanced_fullspec#e6142445' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant image asset 'i_t7_micro_metal_painted_rough_01_n' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant techset asset 'mc/lit_micro_tiled_plus#e6142445' found in zone 'mp_common' while loading zone 'en_mp_nuketown_x'
+Redundant image asset '$white_diffuse' found in zone 'core_pre_gfx' while loading zone 'en_mp_nuketown_x'
+Redundant image asset '$specular_mask' found in zone 'core_common' while loading zone 'en_mp_nuketown_x'
+Redundant techset asset 'mc/lit_micro_tiled_advanced#e6142445' found in zone 'mp_common' while loading zone 'en_mp_nuketown_x'
+Redundant image asset 'i_t7_ntx_micro_metal_scuffed_light_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_o' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_c' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_robot_pod_arm_s' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_robot_pod_arm_base' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_t7_ntx_plastic_base_clean_g' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_carbon_fiber_01_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_carbon_fiber_01_s' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_metal_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_metal' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_metal_matt' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant surfacesounddef asset 'surface_mann_limb' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant impactsoundstable asset 'mann_bounce_limb' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant physpreset asset 'ntx_mannequin_pieces' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant surfacesounddef asset 'surface_mann_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant impactsoundstable asset 'mann_bounce_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant physpreset asset 'ntx_mannequin_pieces_head' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_mtl_p7_ntx_mannequin_female_plastic_a' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant image asset 'i_mtl_p7_ntx_mannequin_female_plastic_n' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_plastic_white' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_carbon_fiber' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_metal_inner' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Redundant material asset 'mc/mtl_p7_ntx_mannequin_female_plastic_black' found in zone 'en_mp_nuketown_x' while loading zone 'mp_nuketown_x'
+Error: Could not find weapon "killstreak_ai_tank_drop_mp".
+Error: Could not find weapon "killstreak_helicopter_player_firstperson_mp".
+Error: Could not find weapon "killstreak_emp_mp".
+Error: Could not find weapon "killstreak_helicopter_comlink_mp".
+Error: Could not find weapon "killstreak_microwave_turret_mp".
+Error: Could not find weapon "killstreak_rcbomb_mp".
+Error: Could not find weapon "killstreak_auto_turret_mp".
+Error: Could not find weapon "killstreak_helicopter_player_gunner_mp".
+Error: Could not find weapon "killstreak_dart_mp".
+Error: Could not find weapon "killstreak_sentinel_mp".
+Error: Could not find weapon "killstreak_airstrike_mp".
+Error: Could not find weapon "weapon_null_mp".
+Error: Could not find weapon "killstreak_counteruav_mp".
+Error: Could not find weapon "killstreak_drone_strike_mp".
+Error: Could not find weapon "killstreak_straferun_mp".
+Error: Could not find weapon "killstreak_helicopter_guard_mp".
+Error: Could not find weapon "killstreak_helicopter_player_gunner_assistant_mp".
+Error: Could not find weapon "killstreak_minigun_mp".
+Error: Could not find weapon "killstreak_planemortar_mp".
+Error: Could not find weapon "killstreak_raps_mp".
+Error: Could not find weapon "killstreak_remote_missile_mp".
+Error: Could not find weapon "killstreak_remote_mortar_mp".
+Error: Could not find weapon "killstreak_satellite_mp".
+Error: Could not find weapon "killstreak_supply_drop_mp".
+Error: Could not find material "hud_ks_m32".
+Error: Could not find material "hud_ks_minigun".
+Error: Could not find fx "_t6/maps/mp_maps/fx_mp_exp_bomb".
+Error: Could not find fx "_t6/vehicle/vexplosion/fx_vexplode_helicopter_exp_mp".
+Error: Could not find fx "_t6/weapon/grenade/fx_spark_disabled_rc_car".
+Error: Could not find fx "killstreaks/fx_drgnfire_damage_state".
+Error: Could not find fx "killstreaks/fx_drgnfire_explosion".
+Error: Could not find fx "killstreaks/fx_drgnfire_impact_sparks".
+Error: Could not find fx "killstreaks/fx_drgnfire_light_green_1p".
+Error: Could not find fx "killstreaks/fx_drgnfire_light_green_3p".
+Error: Could not find fx "killstreaks/fx_drgnfire_light_red_3p".
+Error: Could not find fx "killstreaks/fx_drgnfire_rotor_wash_runner".
+Error: Could not find fx "killstreaks/fx_supply_drop_smoke".
+Error: Could not find fx "ui/fx_fr_target_demat".
+Error: Could not find fx "ui/fx_fr_target_impact".
+Error: Could not find fx "ui/fx_ui_flagbase_blue".
+Error: Could not find fx "ui/fx_ui_flagbase_orng".
+Error: Could not find fx "ui/fx_ui_flagbase_wht".
+Error: Could not find fx "_t6/impacts/fx_flesh_hit_neck_fatal".
+Error: Could not find fx "_t6/trail/fx_trail_blood_streak".
+Error: Could not find fx "_t6/weapon/riotshield/fx_riotshield_depoly_dust".
+Error: Could not find fx "_t6/weapon/riotshield/fx_riotshield_depoly_lights".
+Error: Could not find fx "vehicle/fx_quadtank_airburst".
+Error: Could not find fx "vehicle/fx_quadtank_airburst_ground".
+Error: Could not find fx "weapon/fx_betty_light_blue".
+Error: Could not find fx "weapon/fx_betty_light_orng".
+Error: Could not find fx "weapon/fx_hero_pineapple_trail_blue".
+Error: Could not find fx "weapon/fx_hero_pineapple_trail_orng".
+Error: Could not find fx "zombie/fx_blood_torso_explo_zmb".
+Error: Could not find fx "animals/fx_bio_direwolf_eyes".
+Error: Could not find fx "dlc1/castle/fx_mech_dmg_armor".
+Error: Could not find fx "dlc1/castle/fx_mech_dmg_armor_face".
+Error: Could not find fx "dlc1/castle/fx_mech_dmg_body_light".
+Error: Could not find fx "dlc1/castle/fx_mech_dmg_knee_sparks".
+Error: Could not find fx "dlc1/castle/fx_mech_dmg_sparks".
+Error: Could not find fx "dlc1/castle/fx_mech_foot_step".
+Error: Could not find fx "dlc1/castle/fx_mech_foot_step_steam".
+Error: Could not find fx "dlc1/castle/fx_mech_head_light".
+Error: Could not find fx "dlc1/castle/fx_mech_light_dmg".
+Error: Could not find fx "dlc1/castle/fx_mech_wpn_flamethrower".
+Error: Could not find fx "dlc1/castle/fx_wpn_115_muz".
+Error: Could not find fx "dlc2/island/fx_spores_cloud_ambient_lrg".
+Error: Could not find fx "dlc2/island/fx_spores_cloud_ambient_md".
+Error: Could not find fx "dlc2/island/fx_spores_cloud_ambient_sm".
+Error: Could not find fx "dlc2/island/fx_thrash_chest_mouth_drool_1p".
+Error: Could not find fx "dlc2/island/fx_thrash_eye_glow".
+Error: Could not find fx "dlc2/island/fx_thrash_eye_glow_rage".
+Error: Could not find fx "dlc2/island/fx_thrash_pustule_burst".
+Error: Could not find fx "dlc2/island/fx_thrash_pustule_impact".
+Error: Could not find fx "dlc2/island/fx_thrash_pustule_reinflate".
+Error: Could not find fx "dlc2/island/fx_thrash_pustule_spore_exp".
+Error: Could not find fx "dlc2/island/fx_thrash_rage_gas_leg_lft".
+Error: Could not find fx "dlc2/island/fx_thrash_rage_gas_leg_rgt".
+Error: Could not find fx "dlc2/island/fx_thrash_rage_gas_torso".
+Error: Could not find fx "electric/fx_elec_warlord_damage_1".
+Error: Could not find fx "electric/fx_elec_warlord_damage_2".
+Error: Could not find fx "electric/fx_elec_warlord_lower_damage_1".
+Error: Could not find fx "electric/fx_elec_warlord_lower_damage_2".
+Error: Could not find fx "explosions/fx_exp_warlord_death".
+Error: Could not find fx "fire/fx_fire_ai_human_arm_left_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_arm_right_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_head_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_hip_left_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_hip_right_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_leg_left_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_leg_right_loop_optim".
+Error: Could not find fx "fire/fx_fire_ai_human_torso_loop_optim".
+Error: Could not find fx "light/fx_light_body_glow_warlord".
+Error: Could not find fx "light/fx_light_eye_glow_warlord".
+Error: Could not find fx "player/fx_plyr_ability_screen_blur_overdrive".
+Error: Could not find fx "vehicle/fx_exhaust_jetpack_warlord_juke".
+Error: Could not find fx "zombie/fx_fire_torso_zmb".
+Error: Could not find fx "zombie/fx_margwa_head_shot_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_roar_purple_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_roar_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_teleport_intro_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_teleport_tell_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_teleport_travel_zod_zmb".
+Error: Could not find fx "zombie/fx_margwa_teleport_zod_zmb".
+Error: Could not find fx "zombie/fx_val_chest_burst".
+Error: Could not find fx "vehicle/fx_siegebot_spawn_teleport".
+Error: Could not find weapon "smg_sten_mp".
+Error: Could not find weapon "pistol_revolver38_mp".
+Error: Could not find weapon "launcher_lockon_mp".
+Error: Could not find rawfile "gamedata/constbaselines/mp/bl_little_endian_mp_nuketown_x_infect.bin".
+execing gamedata/configs/mp/ragdoll.cfg from fastfile
+Error: Could not find cgmediatable "cgmedia_mp_nuketown_x".
+Error: Could not find leaderboarddef "lb_mp_cg_infect".
+Error: Could not find rawfile "gamedata/constbaselines/mp/bl_little_endian_mp_nuketown_x_infect.bin".
+[msg]DidUknowiPwn^7 Connected
+Error: Could not find structuredtable "gamedata/tables/mp/mp_nuketown_x_objectives.json".
+Error: Could not find image "blacktransparent_sm".
+Error: Could not find rawfile "vision/mp_nuketown_x.vision".
+Error: Could not find image "t7_hud_mp_ability_hero_heat_wave_available_sm".
+]/quit
+quitting...
+Unloading assets from fastfile 'mp_nuketown_x' and deleting all assets
+SOUND Removing Bank 4 mp_nuketown_x.all patch
+SOUND Removing Bank 5 mp_nuketown_x.all 
+Unloading assets from fastfile 'en_mp_nuketown_x' and deleting all assets
+Removed xpak file: mp_nuketown_x
+Removed xpak file: en_mp_nuketown_x
+SOUND Removing Bank 6 mp_nuketown_x.en patch
+SOUND Removing Bank 7 mp_nuketown_x.en 
+Unloading assets from fastfile 'mp_mod' and deleting all assets
+Unloading assets from fastfile 'en_mp_mod' and deleting all assets
+Removed xpak file: mp_mod
+Unloading assets from fastfile 'mp_common' and deleting all assets
+SOUND Removing Bank 8 mp_common.all patch
+SOUND Removing Bank 9 mp_common.all 
+Unloading assets from fastfile 'en_mp_common' and deleting all assets
+SOUND Removing Bank 10 mp_common.en patch
+SOUND Removing Bank 11 mp_common.en 
+Unloading assets from fastfile 'mp_patch' and deleting all assets
+SOUND Removing Bank 0 mp_patch.all 
+Unloading assets from fastfile 'en_mp_patch' and deleting all assets
+Removed xpak file: mp_initial
+SOUND Removing Bank 1 mp_patch.en 
+Unloading assets from fastfile 'core_ffotd_tu15_593' and deleting all assets
+Unloading assets from fastfile 'en_core_ffotd_tu15_593' and deleting all assets
+Unloading assets from fastfile 'core_common' and deleting all assets
+Unloading assets from fastfile 'en_core_common' and deleting all assets
+Unloading assets from fastfile 'core_ui' and deleting all assets
+SOUND Removing Bank 12 core_ui.all patch
+SOUND Removing Bank 13 core_ui.all 
+Unloading assets from fastfile 'en_core_ui' and deleting all assets
+SOUND Removing Bank 14 core_ui.en patch
+SOUND Removing Bank 15 core_ui.en 
+Unloading assets from fastfile 'core_post_gfx' and deleting all assets
+SOUND Removing Bank 16 core_post_gfx.all patch
+SOUND Removing Bank 17 core_post_gfx.all 
+Unloading assets from fastfile 'en_core_post_gfx' and deleting all assets
+SOUND Removing Bank 18 core_post_gfx.en patch
+SOUND Removing Bank 19 core_post_gfx.en 
+Unloading assets from fastfile 'core_gfx' and deleting all assets
+Unloading assets from fastfile 'en_core_gfx' and deleting all assets
+Unloading assets from fastfile 'core_patch' and deleting all assets
+SOUND Removing Bank 2 core_patch.all 
+Unloading assets from fastfile 'en_core_patch' and deleting all assets
+Removed xpak file: en_base_patch
+Removed xpak file: base_patch
+Removed xpak file: en_base_patch_tu3
+Removed xpak file: base_patch_tu3
+Removed xpak file: en_base_patch_tu4
+Removed xpak file: base_patch_tu4
+Removed xpak file: base_patch_tu5
+Removed xpak file: base_patch_tu6
+Removed xpak file: base_patch_tu7
+Removed xpak file: base_patch_tu8
+Removed xpak file: base_patch_tu9
+Removed xpak file: en_base_patch_tu10
+Removed xpak file: base_patch_tu10
+Removed xpak file: base_patch_tu11
+Removed xpak file: base_patch_tu12
+Removed xpak file: base_patch_tu13
+Removed xpak file: base_patch_tu14
+Removed xpak file: base_patch_tu15
+SOUND Removing Bank 3 core_patch.en 
+Unloading assets from fastfile 'core_pre_gfx' and deleting all assets
+Unloading assets from fastfile 'en_core_pre_gfx' and deleting all assets
+Removed xpak file: en_initial
+Removed xpak file: initial
+Removed xpak file: en_base
+Removed xpak file: base
+Unloaded fastfile 'mp_nuketown_x'
+Unloaded fastfile 'en_mp_nuketown_x'
+Unloaded fastfile 'mp_mod'
+Unloaded fastfile 'en_mp_mod'
+Unloaded fastfile 'mp_common'
+Unloaded fastfile 'en_mp_common'
+Unloaded fastfile 'mp_patch'
+Unloaded fastfile 'en_mp_patch'
+Unloaded fastfile 'core_ffotd_tu15_593'
+Unloaded fastfile 'en_core_ffotd_tu15_593'
+Unloaded fastfile 'core_common'
+Unloaded fastfile 'en_core_common'
+Unloaded fastfile 'core_ui'
+Unloaded fastfile 'en_core_ui'
+Unloaded fastfile 'core_post_gfx'
+Unloaded fastfile 'en_core_post_gfx'
+Unloaded fastfile 'core_gfx'
+Unloaded fastfile 'en_core_gfx'
+Unloaded fastfile 'core_patch'
+Unloaded fastfile 'en_core_patch'
+Unloaded fastfile 'core_pre_gfx'
+Unloaded fastfile 'en_core_pre_gfx'

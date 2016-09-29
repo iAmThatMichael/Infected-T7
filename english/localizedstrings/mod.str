@@ -1,0 +1,41 @@
+VERSION			"1"
+CONFIG				"C:\projects\cod\t7\bin\StringEd.cfg"
+FILENOTES			""
+
+REFERENCE           	OBJECTIVES_INFECT
+LANG_ENGLISH       	"Eliminated Survivors become Infected.  Infect everyone, or survive the game to win."
+
+REFERENCE           	OBJECTIVES_INFECT_HINT
+LANG_ENGLISH        "Watch your back."
+
+REFERENCE           	OBJECTIVES_INFECT_SCORE
+LANG_ENGLISH        "Eliminated Survivors become Infected.  Infect everyone, or survive the game to win."
+
+REFERENCE           	DRAFT_STARTS_IN
+LANG_ENGLISH        "Infection countdown: &&1"
+
+REFERENCE           	DRAFT_WAITING
+LANG_ENGLISH        "Waiting on more players...."
+
+REFERENCE           	INFECTED_WIN
+LANG_ENGLISH        "Survivors eliminated."
+
+REFERENCE           	SURVIVORS_WIN
+LANG_ENGLISH        "Infected eliminated."
+
+REFERENCE           	SURVIVORS_WIN_TIME
+LANG_ENGLISH        "Survivors survived."
+
+REFERENCE				SPECIALISTS_STREAK
+LANG_ENGLISH		"Specialist Bonus"
+
+REFERENCE				SCORE_KILL_INF
+LANG_ENGLISH		"Killed ^1Infected^7"
+
+REFERENCE				SCORE_KILL_SUR
+LANG_ENGLISH		"Killed ^5Survivor^7"
+
+REFERENCE				BECOME_INFECTED
+LANG_ENGLISH		"^1INFECTED"
+
+ENDMARKER

@@ -1,0 +1,4 @@
+return 1000000
+^1Localization ERROR: Unable to load "localizedstrings/mod.str"!
+  localize:mod
+    csv:zone_source/loc/mp_mod.zone
