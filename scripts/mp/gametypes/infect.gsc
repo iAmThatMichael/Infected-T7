@@ -403,7 +403,7 @@ function do_dni_hack(attacker)
 {
 	self thread lightninggun::lightninggun_start_damage_effects(attacker);
 	//self RadiusDamage( self.origin, 128, 105, 10, self, "MOD_BURNED", GetWeapon("gadget_heat_wave") );
-	self DoDamage( self.maxhealth, self.origin, attacker, self, "none", "MOD_PISTOL_BULLET", 0, level.weaponLightningGunArc ); // MOD_HIT_BY_OBJECT
+	self DoDamage( self.maxhealth, self.origin, attacker, attacker, "none", "MOD_UNKNOWN", 0, GetWeapon("pda_hack") ); // MOD_HIT_BY_OBJECT
 }
 
 function notify_specialist( specialist )
@@ -484,7 +484,7 @@ function choose_first_infected()
 	while( !IsAlive(first) || first IsMantling() || (!first IsOnGround() && !first IsOnLadder()) )
 		WAIT_SERVER_FRAME;
 	// change their team, this kills them.
-	first set_infected();
+	first set_infected(true);
 	// set that we're playing finally.
 	level.infect_choseFirstInfected = true;
 	// sound cue
@@ -492,10 +492,10 @@ function choose_first_infected()
 	thread sound::play_on_players( "mpl_flagcapture_sting_friend", "axis" );
 }
 
-function set_infected()
+function set_infected(first)
 {
 	self add_to_team("axis");
-	self [[level.giveCustomLoadout]]();
+	self [[level.giveCustomLoadout]](first);
 	update_scores();
 }
 
@@ -522,7 +522,7 @@ function get_players_in_team( str )
 	return players;
 }
 // our custom loadout system
-function giveCustomLoadout()
+function giveCustomLoadout(first)
 {
 	self TakeAllWeapons();
 	self ClearPerks();
@@ -531,7 +531,7 @@ function giveCustomLoadout()
 	primary_weapon = GetWeapon(level.allies_loadout["primary"]);
 	secondary_weapon = (self.team == "allies" ? GetWeapon(level.allies_loadout["secondary"]) : array::random(level.meleeWeapons)); 
 	lethal = (self.team == "allies" ? GetWeapon(level.allies_loadout["lethal"]) : GetWeapon("hatchet"));
-	tactical = GetWeapon(level.allies_loadout["tactical"]);
+	tactical = (!IS_TRUE(first) ? GetWeapon(level.allies_loadout["tactical"]) : GetWeapon("emp_grenade"));
 	perk1 = (self.team == "allies" ? level.allies_loadout["perk1"] : "specialty_jetcharger" );
 	perk2 = (self.team == "allies" ? level.allies_loadout["perk2"] : undefined ); //specialty_fastweaponswitch|specialty_sprintrecovery|specialty_sprintfirerecovery
 	perk3 = (self.team == "allies" ? level.allies_loadout["perk3"] : undefined ); //specialty_sprintfire|specialty_sprintgrenadelethal|specialty_sprintgrenadetactical|specialty_sprintequipment
@@ -542,6 +542,16 @@ function giveCustomLoadout()
 	self.grenadeTypePrimary = lethal;
 	self.grenadeTypePrimaryCount = 1;
 
+	if(IsDefined(tactical))
+	{
+		ammo = (!IS_TRUE(first) ? 2 : 1 );
+		self GiveWeapon(tactical);
+		self SetWeaponAmmoClip(tactical, ammo);
+		self SwitchToOffHand(tactical);
+		self.grenadeTypeSecondary = tactical;
+		self.grenadeTypeSecondaryCount = ammo;	
+	}
+
 	if(self.team == "allies")
 	{
 		self.specialist = 0;
@@ -549,13 +559,7 @@ function giveCustomLoadout()
 
 		self GiveWeapon(primary_weapon);
 		self GiveMaxAmmo(primary_weapon);
-		// --
-		self GiveWeapon(tactical);
-		self SetWeaponAmmoClip(tactical, 2);
-		self SwitchToOffHand(tactical);
-		self.grenadeTypeSecondary = tactical;
-		self.grenadeTypeSecondaryCount = 2;
-		// --
+
 		self SetSpawnWeapon(primary_weapon);
 
 		heroWeaponName = self GetLoadoutItemRef( 0, "heroWeapon" );
@@ -565,8 +569,6 @@ function giveCustomLoadout()
 			self loadout::giveHeroWeapon();
 		else if(heroGadgetName != "none") // different method for abilities, also set them last.
 			self GiveWeapon(GetWeapon(heroGadgetName));
-
-		//self AllowWallRun(false);
 	}
 
 	self GiveWeapon(secondary_weapon);
