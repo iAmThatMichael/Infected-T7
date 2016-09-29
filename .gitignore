@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.ff
+zone_source/all/assetinfo/mp_mod.deps
+zone_source/all/assetinfo/mp_mod.csv
+zone_source/english/assetinfo/mp_mod.deps
+zone_source/all/assetlist/mp_mod.csv
+zone/en_mp_mod.ff

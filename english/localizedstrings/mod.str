@@ -1,6 +1,6 @@
-VERSION			"1"
-CONFIG				"C:\projects\cod\t7\bin\StringEd.cfg"
-FILENOTES			""
+VERSION				"1"
+CONFIG					"C:\projects\cod\t7\bin\StringEd.cfg"
+FILENOTES				""
 
 REFERENCE           	OBJECTIVES_INFECT
 LANG_ENGLISH       	"Eliminated Survivors become Infected.  Infect everyone, or survive the game to win."

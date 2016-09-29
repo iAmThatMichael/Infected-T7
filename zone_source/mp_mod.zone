@@ -7,28 +7,4 @@ scriptparsetree,scripts/mp/gametypes/infect.gsc
 scriptparsetree,scripts/mp/gametypes/infect.csc
 rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
 
-// scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
-scriptparsetree,scripts/mp/gametypes/_globallogic_player.gsc
-
-scriptparsetree,scripts/mp/gametypes/_globallogic_spawn.gsc
-scriptparsetree,scripts/mp/gametypes/_globallogic_ui.gsc
-scriptparsetree,scripts/mp/gametypes/_globallogic.gsc
-scriptparsetree,scripts/mp/gametypes/_loadout.gsc
-scriptparsetree,scripts/mp/gametypes/_menus.gsc
-
-// scriptparsetree,scripts/mp/gametypes/_globallogic_score.gsc
-
-// scriptparsetree,scripts/shared/medals_shared.gsc
-// scriptparsetree,scripts/shared/callbacks_shared.gsc
-// scriptparsetree,scripts/shared/hud_message_shared.gsc
-// scriptparsetree,scripts/shared/hud_util_shared.gsc
-
 localize,mod
-
-material,combathigh_overlay
-
-xmodel,t6_mod_intel_upload
-
-stringtable,gamedata/tables/mp/scoreinfo.csv
-
-rawfile,minimap.cfg
