@@ -51,3 +51,6 @@ zone_source/all/assetinfo/mp_mod.csv
 zone_source/english/assetinfo/mp_mod.deps
 zone_source/all/assetlist/mp_mod.csv
 zone/en_mp_mod.ff
+console_mp.log
+*.ff
+*.ff

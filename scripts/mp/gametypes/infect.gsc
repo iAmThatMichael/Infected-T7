@@ -46,6 +46,7 @@
 #precache( "string", "MOD_SCORE_KILL_INF" );
 #precache( "string", "MOD_SCORE_KILL_SUR" );
 #precache( "string", "MOD_BECOME_INFECTED" );
+// #precache( "eventstring", "hud_refresh" );
 
 function main()
 {
@@ -67,6 +68,7 @@ function main()
 	level.onStartGameType =&onStartGameType;
 	level.onSpawnPlayer =&onSpawnPlayer;
 	level.onPlayerKilled =&onPlayerKilled;
+	level.onPlayerDamage = &onPlayerDamage;
 	level.onDeadEvent = &onDeadEvent; // override
 	level.giveCustomLoadout = &giveCustomLoadout;
 	
@@ -209,6 +211,9 @@ function on_player_connect()
 function on_player_disconnect()
 {
 	update_scores();
+	// don't start a new countdown if it's not needed
+	if(!IS_TRUE(level.prematch_over))
+		return;
 	// Infected left so time to restart
 	if(count_players_in_team("axis") == 0)
 	{
@@ -305,13 +310,28 @@ function onDeadEvent()
 	return;
 }
 
+function onPlayerDamage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, sWeapon, vPoint, vDir, sHitLoc, psOffsetTime )
+{
+	// nerf the purifier as it's really OP.
+	switch(sWeapon.rootWeapon.name)
+	{
+		case "hero_flamethrower":
+			iDamage = 20;
+			break;
+		default:
+			break;
+	}
+
+	return iDamage;
+}
+
 function onPlayerKilled( eInflictor, attacker, iDamage, sMeansOfDeath, weapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration )
 {
 	if(!level.infect_choseFirstInfected) // haven't selected an infected don't switch
 		return;
 	// wait a frame before switching, stops suicide killers
 	WAIT_SERVER_FRAME; 
-	
+
 	if( self.team == "allies" )
 	{
 		attacker LUINotifyEvent( &"score_event", 3, &"MOD_SCORE_KILL_SUR", 25, 0 );
@@ -321,14 +341,14 @@ function onPlayerKilled( eInflictor, attacker, iDamage, sMeansOfDeath, weapon, v
 			if(self player_did_rejack())
 				return;
 		}
-		//scoreevents::processScoreEvent( "kill_sur", attacker, self, weapon );
+
 		self add_to_team("axis");
 		update_scores();
+
 		if(count_players_in_team("allies") == 1)
 		{
 			player = get_players_in_team("allies")[0];
 			player IPrintLnBold("Last Alive");
-			// need a sound cue
 			SetTeamSpyplane( "axis", 1 );
 			util::set_team_radar( "axis", 1 );
 		}
@@ -422,6 +442,10 @@ function notify_specialist( specialist )
 
 function infect_endGame( winningTeam, endReasonText )
 {
+	IPrintLn("Infected brought to you by: DidUknowiPwn");
+	IPrintLn("YouTube: iPwnAtZombies, Twitter: CookiesAreLaw");
+	IPrintLn("Check out UGX-Mods for more mods!");
+
 	thread globallogic::endGame( winningTeam, endReasonText );
 }
 
@@ -453,7 +477,6 @@ function add_to_team( team )
 
 	self.pers["class"] = level.defaultClass;
 	self.curClass = level.defaultClass;
-
 }
 
 function choose_first_infected()
@@ -479,7 +502,7 @@ function choose_first_infected()
 	level.infect_timerDisplay.alpha = 0;
 
 	// pick a random player and infect them
-	first = array::random(level.players);
+	first = randomize_return(level.players);
 	// some checks first
 	while( !IsAlive(first) || first IsMantling() || (!first IsOnGround() && !first IsOnLadder()) )
 		WAIT_SERVER_FRAME;
@@ -521,18 +544,19 @@ function get_players_in_team( str )
 	}
 	return players;
 }
-// our custom loadout system
+
 function giveCustomLoadout(first)
 {
 	self TakeAllWeapons();
 	self ClearPerks();
-	//self AllowDoubleJump(false);
+
 
 	primary_weapon = GetWeapon(level.allies_loadout["primary"]);
-	secondary_weapon = (self.team == "allies" ? GetWeapon(level.allies_loadout["secondary"]) : array::random(level.meleeWeapons)); 
+	secondary_weapon = (self.team == "allies" ? GetWeapon(level.allies_loadout["secondary"]) : randomize_return(level.meleeWeapons)); 
 	lethal = (self.team == "allies" ? GetWeapon(level.allies_loadout["lethal"]) : GetWeapon("hatchet"));
-	tactical = (!IS_TRUE(first) ? GetWeapon(level.allies_loadout["tactical"]) : GetWeapon("emp_grenade"));
-	perk1 = (self.team == "allies" ? level.allies_loadout["perk1"] : "specialty_jetcharger" );
+	tactical = (self.team == "allies" ? GetWeapon(level.allies_loadout["tactical"]) : undefined);
+	//tactical = (!IS_TRUE(first) ? GetWeapon(level.allies_loadout["tactical"]) : GetWeapon("emp_grenade")); //TODO
+	perk1 = (self.team == "allies" ? level.allies_loadout["perk1"] : undefined ); //specialty_jetcharger
 	perk2 = (self.team == "allies" ? level.allies_loadout["perk2"] : undefined ); //specialty_fastweaponswitch|specialty_sprintrecovery|specialty_sprintfirerecovery
 	perk3 = (self.team == "allies" ? level.allies_loadout["perk3"] : undefined ); //specialty_sprintfire|specialty_sprintgrenadelethal|specialty_sprintgrenadetactical|specialty_sprintequipment
 	
@@ -582,7 +606,8 @@ function giveCustomLoadout(first)
 		self set_perks(perk3);
 
 	// waiting on TU16 for this to be included as per CyberSilverback bug PM
-	// self LUINotifyEvent( &"hud_refresh", 0 );
+	//if(IS_TRUE(first))
+	//	self LUINotifyEvent( &"hud_refresh", 0 );
 
 	self hud::showPerks( );
 
@@ -622,16 +647,16 @@ function build_allies_class()
 	perk2 = self get_table_items( "specialty2", blackList["perk2"] );
 	perk3 = self get_table_items( "specialty3", blackList["perk3"] );
 
-	level.allies_loadout["primary"] = array::random(primaryWeapons);
-	level.allies_loadout["secondary"] = array::random(secondaryWeapons);
-	level.allies_loadout["lethal"] = array::random(lethals);
-	level.allies_loadout["tactical"] = array::random(tacticals);
-	level.allies_loadout["perk1"] = array::random(perk1);
-	level.allies_loadout["perk2"] = array::random(perk2);
-	level.allies_loadout["perk3"] = array::random(perk3);
-	level.allies_loadout["specialist_perk1"] = array::random(array::exclude(perk1, level.allies_loadout["perk1"]));
-	level.allies_loadout["specialist_perk2"] = array::random(array::exclude(perk2, level.allies_loadout["perk2"]));
-	level.allies_loadout["specialist_perk3"] = array::random(array::exclude(perk3, level.allies_loadout["perk3"]));
+	level.allies_loadout["primary"] = randomize_return(primaryWeapons);
+	level.allies_loadout["secondary"] = randomize_return(secondaryWeapons);
+	level.allies_loadout["lethal"] = randomize_return(lethals);
+	level.allies_loadout["tactical"] = randomize_return(tacticals);
+	level.allies_loadout["perk1"] = randomize_return(perk1);
+	level.allies_loadout["perk2"] = randomize_return(perk2);
+	level.allies_loadout["perk3"] = randomize_return(perk3);
+	level.allies_loadout["specialist_perk1"] = randomize_return(array::exclude(perk1, level.allies_loadout["perk1"]));
+	level.allies_loadout["specialist_perk2"] = randomize_return(array::exclude(perk2, level.allies_loadout["perk2"]));
+	level.allies_loadout["specialist_perk3"] = randomize_return(array::exclude(perk3, level.allies_loadout["perk3"]));
 	level.allies_loadout["specialist_perk4"] = ArrayCombine(ArrayCombine(perk1, perk2, true, false), perk3, true, false);
 
 	/*
@@ -655,6 +680,11 @@ function build_allies_class()
 	IPrintLn("Lethal: " + level.allies_loadout["lethal"]);
 	IPrintLn("Tactical: " + level.allies_loadout["tactical"]);
 	*/
+}
+
+function randomize_return( items )
+{
+	return array::random(array::randomize(items));
 }
 
 function get_table_items( filterSlot, blackList, search )
@@ -709,8 +739,8 @@ function testing()
 	for(;;)
 	{
 		WAIT_SERVER_FRAME;
-
-		if ( self UseButtonPressed() )
+		// player is pressing use and attack and total players is less than 1/2
+		if ( (self UseButtonPressed() && self AttackButtonPressed()) && level.players.size < GetDvarInt("sv_maxclients")/2 )
 		{
 			bot = AddTestClient();
 			

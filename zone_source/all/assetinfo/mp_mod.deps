@@ -8,20 +8,28 @@ ignore_missing_shipped,core_common
 ignore_missing_shipped,mp_common
 ignore_missing_shipped,mp_patch
 scriptparsetree,scripts/mp/gametypes/infect.gsc
-	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\scripts\mp\gametypes\infect.gsc,1475111545,
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\scripts\mp\gametypes\infect.gsc,1475298168,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1471627541,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1471627541,
 scriptparsetree,scripts/mp/gametypes/infect.csc
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\scripts\mp\gametypes\infect.csc,1471627541,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1471627541,
 rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
-	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\gamedata\gamesettings\mp\gamesettings_infect.cfg,1471889337,
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\gamedata\gamesettings\mp\gamesettings_infect.cfg,1475203468,
 localize,mod
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\english\localizedstrings\mod.str,1475109982,
+rawfile,mod.cfg
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\mod.cfg,1475031183,
+rawfile,cp_mod.cfg
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\cp_mod.cfg,1475031183,
+rawfile,mp_mod.cfg
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\mp_mod.cfg,1475031183,
+rawfile,zm_mod.cfg
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\zm_mod.cfg,1475031183,
 texturecombo,mp_mod
 assetlist,mp_mod
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1470165956,
-	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\zone_source\mp_mod.zone,1475110885,daee990e,17c734e5,ca839c34,db9f3f0c
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\zone_source\mp_mod.zone,1475204164,3e0d1043,adeef1be,57e9960d,af9fdd48
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\zone_source\mp_mod.class,1473268402,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1470166095,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\zone_source\default.class,1470166344,

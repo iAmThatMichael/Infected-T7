@@ -8,3 +8,8 @@ scriptparsetree,scripts/mp/gametypes/infect.csc
 rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
 
 localize,mod
+
+rawfile,mod.cfg
+rawfile,cp_mod.cfg
+rawfile,mp_mod.cfg
+rawfile,zm_mod.cfg

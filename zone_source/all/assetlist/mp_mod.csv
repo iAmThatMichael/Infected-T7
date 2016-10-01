@@ -1,4 +1,8 @@
+rawfile,cp_mod.cfg
 rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
+rawfile,mod.cfg
+rawfile,mp_mod.cfg
+rawfile,zm_mod.cfg
 scriptparsetree,scripts/mp/gametypes/infect.csc
 scriptparsetree,scripts/mp/gametypes/infect.gsc
 keyvaluepairs,mp_mod
