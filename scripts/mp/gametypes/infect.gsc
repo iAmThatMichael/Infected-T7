@@ -88,8 +88,6 @@ function onStartGameType()
 {
 	setClientNameMode("auto_change");
 
-	thread infected();
-
 	if ( !isdefined( game["switchedsides"] ) )
 		game["switchedsides"] = false;
 
@@ -156,11 +154,28 @@ function onStartGameType()
 	level.infect_choseFirstInfected = false;
 
 	level.infect_timerDisplay = hud::createServerTimer( "objective", 1.4 );
-	level.infect_timerDisplay hud::setPoint( "TOPLEFT", "TOPLEFT", 115, 5 );
+	level.infect_timerDisplay hud::setPoint( "TOPLEFT", "TOPLEFT", 10, 125 );
 	level.infect_timerDisplay.label = &"MOD_DRAFT_STARTS_IN";
 	level.infect_timerDisplay.alpha = 0;
 	level.infect_timerDisplay.archived = false;
 	level.infect_timerDisplay.hideWhenInMenu = true;
+
+	// default vars
+	level.infect_useEM = true;
+	level.infect_surAttch = false;
+	level.infect_surSpecialists = true;
+
+	if(GetDvarInt("noenhancedmovement") == 1)
+		level.infect_useEM = false;
+
+	if(GetDvarInt("survivor_attachments") > 0)
+		level.infect_surAttch = true;
+
+	if(GetDvarInt("survivor_specialists") == 0)
+		level.infect_surSpecialists = false;
+
+
+	thread infected();
 }
 
 function onTimeLimit()
@@ -349,6 +364,8 @@ function onPlayerKilled( eInflictor, attacker, iDamage, sMeansOfDeath, weapon, v
 		{
 			player = get_players_in_team("allies")[0];
 			player IPrintLnBold("Last Alive");
+			// still not working....
+			//player globallogic_audio::leader_dialog_on_player( "sudden_death" );
 			SetTeamSpyplane( "axis", 1 );
 			util::set_team_radar( "axis", 1 );
 		}
@@ -444,7 +461,7 @@ function infect_endGame( winningTeam, endReasonText )
 {
 	IPrintLn("Infected brought to you by: DidUknowiPwn");
 	IPrintLn("YouTube: iPwnAtZombies, Twitter: CookiesAreLaw");
-	IPrintLn("Check out UGX-Mods for more mods!");
+	IPrintLn("Check out UGX-Mods.com for more mods!");
 
 	thread globallogic::endGame( winningTeam, endReasonText );
 }
@@ -484,6 +501,11 @@ function choose_first_infected()
 	level endon( "end_first_inf" );
 	level endon( "game_ended" );
 
+	if(IS_TRUE(level.infect_choosingFirstInf))
+		return;
+
+	level.infect_choosingFirstInf = true;
+
 	if(level.players.size < 4)
 	{
 		level.infect_timerDisplay.label = &"MOD_DRAFT_WAITING";
@@ -498,9 +520,8 @@ function choose_first_infected()
 	level.infect_timerDisplay.alpha = 1;
 
 	hostmigration::waitLongDurationWithHostMigrationPause( 10 );
-
+	// hide the timer
 	level.infect_timerDisplay.alpha = 0;
-
 	// pick a random player and infect them
 	first = randomize_return(level.players);
 	// some checks first
@@ -510,6 +531,7 @@ function choose_first_infected()
 	first set_infected(true);
 	// set that we're playing finally.
 	level.infect_choseFirstInfected = true;
+	level.infect_choosingFirstInf = false;
 	// sound cue
 	thread sound::play_on_players( "mpl_flagcapture_sting_enemy", "allies" );
 	thread sound::play_on_players( "mpl_flagcapture_sting_friend", "axis" );
@@ -550,9 +572,9 @@ function giveCustomLoadout(first)
 	self TakeAllWeapons();
 	self ClearPerks();
 
-
-	primary_weapon = GetWeapon(level.allies_loadout["primary"]);
-	secondary_weapon = (self.team == "allies" ? GetWeapon(level.allies_loadout["secondary"]) : randomize_return(level.meleeWeapons)); 
+	primary_weapon = level.allies_loadout["primary"];
+	secondary_weapon = (self.team == "allies" ? level.allies_loadout["secondary"] : randomize_return(level.meleeWeapons));
+	spawn_weapon = (self.team == "allies" ? primary_weapon : secondary_weapon);
 	lethal = (self.team == "allies" ? GetWeapon(level.allies_loadout["lethal"]) : GetWeapon("hatchet"));
 	tactical = (self.team == "allies" ? GetWeapon(level.allies_loadout["tactical"]) : undefined);
 	//tactical = (!IS_TRUE(first) ? GetWeapon(level.allies_loadout["tactical"]) : GetWeapon("emp_grenade")); //TODO
@@ -584,19 +606,22 @@ function giveCustomLoadout(first)
 		self GiveWeapon(primary_weapon);
 		self GiveMaxAmmo(primary_weapon);
 
-		self SetSpawnWeapon(primary_weapon);
+		if(IS_TRUE(level.infect_surSpecialists))
+		{
+			heroWeaponName = self GetLoadoutItemRef( 0, "heroWeapon" );
+			heroGadgetName = self GetLoadoutItemRef( 0, "herogadget" );
 
-		heroWeaponName = self GetLoadoutItemRef( 0, "heroWeapon" );
-		heroGadgetName = self GetLoadoutItemRef( 0, "herogadget" );
-
-		if(heroWeaponName != "weapon_null")
-			self loadout::giveHeroWeapon();
-		else if(heroGadgetName != "none") // different method for abilities, also set them last.
-			self GiveWeapon(GetWeapon(heroGadgetName));
+			if(heroWeaponName != "weapon_null")
+				self loadout::giveHeroWeapon();
+			else if(heroGadgetName != "none") // different method for abilities, also set them last.
+				self GiveWeapon(GetWeapon(heroGadgetName));			
+		}
 	}
 
 	self GiveWeapon(secondary_weapon);
 	self GiveMaxAmmo(secondary_weapon);
+
+	self SetSpawnWeapon(spawn_weapon);
 
 	if(IsDefined(perk1))
 		self set_perks(perk1);
@@ -609,9 +634,16 @@ function giveCustomLoadout(first)
 	//if(IS_TRUE(first))
 	//	self LUINotifyEvent( &"hud_refresh", 0 );
 
-	self hud::showPerks( );
+	self hud::showPerks();
 
-	return (self.team == "allies" ? primary_weapon : secondary_weapon);
+	if(!IS_TRUE(level.infect_useEM))
+	{
+		self AllowDoubleJump(false);
+		self AllowSlide(false);
+		self AllowWallRun(false);
+	}
+
+	return spawn_weapon;
 }
 
 function set_perks(perks)
@@ -647,8 +679,24 @@ function build_allies_class()
 	perk2 = self get_table_items( "specialty2", blackList["perk2"] );
 	perk3 = self get_table_items( "specialty3", blackList["perk3"] );
 
-	level.allies_loadout["primary"] = randomize_return(primaryWeapons);
-	level.allies_loadout["secondary"] = randomize_return(secondaryWeapons);
+	primary = randomize_return(primaryWeapons);
+	secondary = randomize_return(secondaryWeapons);
+
+	level.allies_loadout["primary"] = GetWeapon(primary);
+	level.allies_loadout["secondary"] = GetWeapon(secondary);
+
+	if(IS_TRUE(level.infect_surAttch))
+	{
+		num_attachments = Max(GetDvarInt("survivor_attachments"), 4);
+		primary_attachments = GetRandomCompatibleAttachmentsForWeapon(level.allies_loadout["primary"], num_attachments);
+		primary_weapon = GetWeapon(primary, primary_attachments);
+		secondary_attachments = GetRandomCompatibleAttachmentsForWeapon(level.allies_loadout["secondary"], num_attachments);
+		secondary_weapon = GetWeapon(secondary, secondary_attachments);
+
+		level.allies_loadout["primary"] = primary_weapon;
+		level.allies_loadout["secondary"] = secondary_weapon;		
+	}
+
 	level.allies_loadout["lethal"] = randomize_return(lethals);
 	level.allies_loadout["tactical"] = randomize_return(tacticals);
 	level.allies_loadout["perk1"] = randomize_return(perk1);
@@ -739,8 +787,8 @@ function testing()
 	for(;;)
 	{
 		WAIT_SERVER_FRAME;
-		// player is pressing use and attack and total players is less than 1/2
-		if ( (self UseButtonPressed() && self AttackButtonPressed()) && level.players.size < GetDvarInt("sv_maxclients")/2 )
+		// player is pressing use and attack
+		if (self UseButtonPressed() && self AttackButtonPressed())
 		{
 			bot = AddTestClient();
 			
