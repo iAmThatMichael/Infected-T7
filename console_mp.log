@@ -1,5 +1,5 @@
 Build 0
-logfile opened on Sat Oct 01 14:41:37 2016
+logfile opened on Sat Oct 01 14:56:37 2016
 
 Error: Could not find rawfile "gamedata/ddldata/common/official_customgames.ddldata_1".
 Error: Could not find rawfile "gamedata/ddldata/common/official_customgames.ddldata_2".
@@ -14,7 +14,7 @@ FastFileLoad: Setting en_mp_sector to XZONE_LOADING.
 Loading fastfile 'en_mp_sector'
 SOUND Adding Bank mp_sector.en 1018 patch
 Added xpak file: mp_sector (991 items)
-Added XPaks for en_mp_sector, 15ms
+Added XPaks for en_mp_sector, 17ms
 Loading sounds for 'en_mp_sector'
 SOUND load state for mp_sector.en patch changed from 0 to 1
 SOUND load state for mp_sector.en patch changed from 1 to 2
@@ -31,14 +31,14 @@ SOUND load state for mp_sector.en changed from 4 to 5
 SOUND load state for mp_sector.en changed from 5 to 6
 SOUND load state for mp_sector.en changed from 6 to 7
 Loaded sounds for 'en_mp_sector' 217ms
-FastFileLoad: Setting en_mp_sector to XZONE_LOADED in 397ms.
+FastFileLoad: Setting en_mp_sector to XZONE_LOADED in 392ms.
 FastFileLoad: Setting mp_sector to XZONE_LOADING.
 Loading fastfile 'mp_sector'
-Waited 1917 msec for asset 'maps/mp/mp_sector.d3dbsp' of type 'col_map'.
+Waited 1800 msec for asset 'maps/mp/mp_sector.d3dbsp' of type 'col_map'.
 SOUND Adding Bank mp_sector.all 1019 patch
-Waited 39 msec for asset 'gamedata/configstrings/mp_sector.csv' of type 'stringtable'.
+Waited 25 msec for asset 'gamedata/configstrings/mp_sector.csv' of type 'stringtable'.
 xpak is empty: E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III/zone/mp_sector_d.xpak
-Added XPaks for mp_sector, 25ms
+Added XPaks for mp_sector, 13ms
 Loading sounds for 'mp_sector'
 SOUND load state for mp_sector.all patch changed from 0 to 1
 SOUND load state for mp_sector.all patch changed from 1 to 2
@@ -56,8 +56,8 @@ SOUND load state for mp_sector.all changed from 4 to 5
 SOUND loaded alloc E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III/zone/snd/all/mp_sector.all.sabl 0000000D06B9B800 0000000D06B9D000
 SOUND load state for mp_sector.all changed from 5 to 6
 SOUND load state for mp_sector.all changed from 6 to 7
-Loaded sounds for 'mp_sector' 1191ms
-FastFileLoad: Setting mp_sector to XZONE_LOADED in 2950ms.
+Loaded sounds for 'mp_sector' 1155ms
+FastFileLoad: Setting mp_sector to XZONE_LOADED in 2764ms.
 Error: Could not find weapon "killstreak_ai_tank_drop_mp".
 Error: Could not find weapon "killstreak_helicopter_player_firstperson_mp".
 Error: Could not find weapon "killstreak_emp_mp".
@@ -180,238 +180,15 @@ Error: Could not find material "t7_hud_cp_grenade_splash".
 Error: Could not find structuredtable "gamedata/tables/mp/mp_sector_objectives.json".
 Error: Could not find image "blacktransparent_sm".
 Error: Could not find image "t7_hud_mp_ability_hero_heat_wave_available_sm".
-]/clear
-]\survivor_attachments 1
+]\survivor_attachments 4
+]/gametype_setting prematchperiod 0
 ]/fast_restart
 [msg]DidUknowiPwn^7 Connected
-[msg][3arc]D. Olson^7 Connected
-[msg][3arc]S. Jung^7 Connected
-[msg][3arc]S. Oliver^7 Connected
-[msg][3arc]N. Masiclat^7 Connected
-]/god
-[msg]godmode ON
-[msg][3arc]C. Turner^7 Connected
-[msg][3arc]V. Sharma^7 Connected
-[msg][3arc]M. Barnes^7 Connected
-[msg][3arc]T. La^7 Connected
-[msg][3arc]M. Kimberling^7 Connected
-[msg][3arc]B. Toda^7 Connected
-[msg][3arc]O. McClendon^7 Connected
-[msg][3arc]T. Curran^7 Connected
-[msg][3arc]E. Olson^7 Connected
-[msg][3arc]A. Stein^7 Connected
-[msg][3arc]J. Feidt^7 Connected
-[msg][3arc]D. Marlowe^7 Connected
-[msg][3arc]C. Proctor^7 Connected
-Error: throwing script exception: Error: type undefined is not an entityError: 
-
-******* script error *******
-Error: type undefined is not an entity
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: cannot cast undefined to boolError: 
-
-******* script error *******
-Error: cannot cast undefined to bool
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'Error: 
-
-******* script error *******
-Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: type undefined is not an entityError: 
-
-******* script error *******
-Error: type undefined is not an entity
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: cannot cast undefined to boolError: 
-
-******* script error *******
-Error: cannot cast undefined to bool
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'Error: 
-
-******* script error *******
-Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-]\bot_difficulty 3
-Error: throwing script exception: Error: type undefined is not an entityError: 
-
-******* script error *******
-Error: type undefined is not an entity
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: cannot cast undefined to boolError: 
-
-******* script error *******
-Error: cannot cast undefined to bool
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'Error: 
-
-******* script error *******
-Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-[msg]Last Alive
-[msg]Got ^1DNI Hack^7! Press ^1F^7 to activate!
-Error: throwing script exception: Error: type undefined is not an entityError: 
-
-******* script error *******
-Error: type undefined is not an entity
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: cannot cast undefined to boolError: 
-
-******* script error *******
-Error: cannot cast undefined to bool
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'Error: 
-
-******* script error *******
-Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair '26' and 'undefined' has unmatching types 'int' and 'undefined'Error: 
-
-******* script error *******
-Error: pair '26' and 'undefined' has unmatching types 'int' and 'undefined'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/mp/gametypes/infect.gsc', line 282 :: 
-Error: 	file 'scripts/mp/gametypes/infect.gsc', line 388 :: 
-Error: 	file 'scripts/mp/gametypes/infect.gsc', line 348 :: 
-Error: ************************************
-[msg]Got ^1DNI Hack^7! Press ^1F^7 to activate!
-Error: throwing script exception: Error: type undefined is not an entityError: 
-
-******* script error *******
-Error: type undefined is not an entity
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: cannot cast undefined to boolError: 
-
-******* script error *******
-Error: cannot cast undefined to bool
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-Error: throwing script exception: Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'Error: 
-
-******* script error *******
-Error: pair 'undefined' and 'entity' has unmatching types 'undefined' and 'pointer'
-Error: 
-******* Call stack *******
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot_combat.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: 	file 'scripts/shared/bots/_bot.gsc' - missing line information
-Error: ************************************
-]/god
-[msg]godmode OFF
-[msg]Infected brought to you by: DidUknowiPwn
-[msg]YouTube: iPwnAtZombies, Twitter: CookiesAreLaw
-[msg]Check out UGX-Mods.com for more mods!
+]\survivor_attachments 9
+]/fast_restart
+[msg]DidUknowiPwn^7 Connected
+]/fast_restart
+[msg]DidUknowiPwn^7 Connected
 ]/quit
 quitting...
 Unloading assets from fastfile 'mp_sector' and deleting all assets

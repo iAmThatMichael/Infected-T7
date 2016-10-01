@@ -164,6 +164,7 @@ function onStartGameType()
 	level.infect_useEM = true;
 	level.infect_surAttch = false;
 	level.infect_surSpecialists = true;
+	level.infect_choosingFirstInf = false;
 
 	if(GetDvarInt("noenhancedmovement") == 1)
 		level.infect_useEM = false;
@@ -687,7 +688,7 @@ function build_allies_class()
 
 	if(IS_TRUE(level.infect_surAttch))
 	{
-		num_attachments = Max(GetDvarInt("survivor_attachments"), 4);
+		num_attachments = Int(Min(GetDvarInt("survivor_attachments"), 4));
 		primary_attachments = GetRandomCompatibleAttachmentsForWeapon(level.allies_loadout["primary"], num_attachments);
 		primary_weapon = GetWeapon(primary, primary_attachments);
 		secondary_attachments = GetRandomCompatibleAttachmentsForWeapon(level.allies_loadout["secondary"], num_attachments);

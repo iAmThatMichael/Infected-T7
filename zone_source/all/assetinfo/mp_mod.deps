@@ -8,7 +8,7 @@ ignore_missing_shipped,core_common
 ignore_missing_shipped,mp_common
 ignore_missing_shipped,mp_patch
 scriptparsetree,scripts/mp/gametypes/infect.gsc
-	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\scripts\mp\gametypes\infect.gsc,1475357639,
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\scripts\mp\gametypes\infect.gsc,1475358909,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1471627541,
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1471627541,
 scriptparsetree,scripts/mp/gametypes/infect.csc
@@ -23,7 +23,7 @@ rawfile,mod.cfg
 rawfile,cp_mod.cfg
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\cp_mod.cfg,1475031183,
 rawfile,mp_mod.cfg
-	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\mp_mod.cfg,1475343307,
+	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\mp_mod.cfg,1475358404,
 rawfile,zm_mod.cfg
 	file,E:\Program Files (x86)\Steam\SteamApps\common\Call of Duty Black Ops III\mods\mp_infected\zm_mod.cfg,1475031183,
 texturecombo,mp_mod
