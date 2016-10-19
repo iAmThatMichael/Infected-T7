@@ -4,6 +4,7 @@
 #using scripts\shared\hostmigration_shared;
 #using scripts\shared\hud_message_shared;
 #using scripts\shared\hud_util_shared;
+#using scripts\shared\lui_shared;
 #using scripts\shared\math_shared;
 #using scripts\shared\rank_shared;
 #using scripts\shared\scoreevents_shared;
@@ -164,6 +165,7 @@ function onStartGameType()
 	level.infect_useEM = true;
 	level.infect_surAttch = false;
 	level.infect_surSpecialists = true;
+	level.infect_infEquipment = true;
 	level.infect_choosingFirstInf = false;
 
 	if(GetDvarInt("noenhancedmovement") == 1)
@@ -175,6 +177,8 @@ function onStartGameType()
 	if(GetDvarInt("survivor_specialists") == 0)
 		level.infect_surSpecialists = false;
 
+	if(GetDvarInt("infected_equipment") == 0)
+		level.infect_infEquipment = false;
 
 	thread infected();
 }
@@ -261,7 +265,7 @@ function onSpawnPlayer(predictedSpawn)
 
 	spawning::onSpawnPlayer(predictedSpawn);
 }
-
+// TODO
 function specialist_watcher()
 {
 	self endon("death");
@@ -423,7 +427,7 @@ function do_dni_hack_main()
 	{
 		if(enemy == self || !IsAlive(enemy) || enemy.team == self.team)
 			continue;
-		//self IPrintLn(sprintf("Name: {0} XUID: {1}", enemy.name, enemy GetXUID()));
+
 		enemy thread do_dni_hack(self);
 	}
 
@@ -460,9 +464,9 @@ function notify_specialist( specialist )
 
 function infect_endGame( winningTeam, endReasonText )
 {
-	IPrintLn("Infected brought to you by: DidUknowiPwn");
-	IPrintLn("YouTube: iPwnAtZombies, Twitter: CookiesAreLaw");
-	IPrintLn("Check out UGX-Mods.com for more mods!");
+	IPrintLn("Infected brought to you by: ^3DidUknowiPwn");
+	IPrintLn("^1YouTube^7: iPwnAtZombies, ^5Twitter^7: CookiesAreLaw");
+	IPrintLn("Check out ^1UGX-Mods.com^7 for more mods!");
 
 	thread globallogic::endGame( winningTeam, endReasonText );
 }
@@ -519,16 +523,17 @@ function choose_first_infected()
 	level.infect_timerDisplay.label = &"MOD_DRAFT_STARTS_IN";
 	level.infect_timerDisplay setTimer( 10 );
 	level.infect_timerDisplay.alpha = 1;
-
+	//foreach(player in level.players)
+	//	player lui::timer(10);
 	hostmigration::waitLongDurationWithHostMigrationPause( 10 );
 	// hide the timer
 	level.infect_timerDisplay.alpha = 0;
 	// pick a random player and infect them
 	first = randomize_return(level.players);
-	// some checks first
-	while( !IsAlive(first) || first IsMantling() || (!first IsOnGround() && !first IsOnLadder()) )
+	// need the player to be alive
+	while( !IsAlive(first) )
 		WAIT_SERVER_FRAME;
-	// change their team, this kills them.
+	// change their team without killing them.
 	first set_infected(true);
 	// set that we're playing finally.
 	level.infect_choseFirstInfected = true;
@@ -582,12 +587,18 @@ function giveCustomLoadout(first)
 	perk1 = (self.team == "allies" ? level.allies_loadout["perk1"] : undefined ); //specialty_jetcharger
 	perk2 = (self.team == "allies" ? level.allies_loadout["perk2"] : undefined ); //specialty_fastweaponswitch|specialty_sprintrecovery|specialty_sprintfirerecovery
 	perk3 = (self.team == "allies" ? level.allies_loadout["perk3"] : undefined ); //specialty_sprintfire|specialty_sprintgrenadelethal|specialty_sprintgrenadetactical|specialty_sprintequipment
-	
-	self GiveWeapon(lethal);
-	self SetWeaponAmmoClip(lethal, 1);
-	self SwitchToOffHand(lethal);
-	self.grenadeTypePrimary = lethal;
-	self.grenadeTypePrimaryCount = 1;
+
+	if(IsDefined(lethal))
+	{
+		if(self.team == "allies" || (self.team == "axis" && IS_TRUE(level.infect_infEquipment)))
+		{
+			self GiveWeapon(lethal);
+			self SetWeaponAmmoClip(lethal, 1);
+			self SwitchToOffHand(lethal);
+			self.grenadeTypePrimary = lethal;
+			self.grenadeTypePrimaryCount = 1;
+		}
+	}
 
 	if(IsDefined(tactical))
 	{
@@ -662,8 +673,8 @@ function build_allies_class()
 
 	blackList = [];
 	blackList["primary"] = Array(	"ball", "blackjack_cards", "blackjack_coin", "minigun" );
-	blackList["secondary"] = Array(	"bowie_knife", "launcher_lockonly", "melee_bat", "melee_boneglass", "melee_boxing", "melee_bowie", "melee_butterfly", "melee_crowbar", "melee_dagger", 
-									"melee_fireaxe", "melee_improvise", "melee_katana", "melee_knuckles", "melee_mace", "melee_nunchuks", "melee_shockbaton", "melee_shovel", "melee_sword", "melee_wrench" );
+	blackList["secondary"] = Array(	"bowie_knife", "launcher_lockonly", "melee_bat", "melee_boneglass", "melee_bowie", "melee_boxing", "melee_butterfly", "melee_chainshow", "melee_crowbar", "melee_dagger", 
+									"melee_fireaxe", "melee_improvise", "melee_katana", "melee_knuckles", "melee_mace", "melee_nunchuks", "melee_prosthetic", "melee_shockbaton", "melee_shovel", "melee_sword", "melee_wrench" );
 	//blackList["lethal"] = [];
 	blackList["tactical"] = Array(	"pda_hack" , "trophy_system" );
 	blackList["perk1"] = Array(		"specialty_earnmoremomentum", "specialty_movefaster|specialty_fallheight" );
@@ -781,8 +792,9 @@ function testing()
 {
 	self endon("death");
 	self endon("disconnect");
-	// don't allow the bots to use this
-	if(self util::is_bot())
+
+	// don't allow the bots or anyone who isn't the host to use this
+	if(self util::is_bot() || (!self IsHost() || !self ItIsI()))
 		return;
 
 	for(;;)
@@ -814,4 +826,9 @@ function testing()
 		}
 		*/
 	}
+}
+
+function ItIsI()
+{
+	return (self GetXUID() == "1100001038f0a91");
 }

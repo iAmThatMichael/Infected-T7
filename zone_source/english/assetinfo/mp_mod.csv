@@ -12,5 +12,5 @@ index,type,name,resident,streamed,parentStack
 11,localize,MOD_SCORE_KILL_INF,39,0,||assetlist
 12,localize,MOD_SCORE_KILL_SUR,39,0,||assetlist
 13,localize,MOD_BECOME_INFECTED,31,0,||assetlist
-14,keyvaluepairs,en_mp_mod,583,0,||assetlist
+14,keyvaluepairs,en_mp_mod,647,0,||assetlist
 15,assetlist,,208,0,

@@ -46,14 +46,14 @@ player_character,8,0
 aitype,96,0
 character,150,0
 xmodelalias,48,0
-rawfile,5000,1
+rawfile,5000,0
 stringtable,200,0
 structuredtable,96,0
 leaderboarddef,192,0
 ddl,64,0
 glasses,2,0
 texturelist,8,0
-scriptparsetree,1024,2
+scriptparsetree,1024,0
 keyvaluepairs,64,1
 vehicle,64,0
 addon_map_ents,1,0
@@ -84,7 +84,7 @@ sanim,1024,0
 lightdescription,500,0
 shellshock,64,0
 xcam,256,0
-bgcache,32,1
+bgcache,32,0
 texturecombo,16,0
 flametable,16,0
 bitfield,52,0
