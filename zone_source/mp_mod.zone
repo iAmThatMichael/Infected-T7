@@ -1,0 +1,12 @@
+>mode,mp
+>type,common
+
+#include "mp_mod.class"
+
+scriptparsetree,scripts/mp/gametypes/infect.gsc
+scriptparsetree,scripts/mp/gametypes/infect.csc
+rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
+
+localize,mod
+
+stringtable,gamedata/tables/mp/scoreinfo.csv
