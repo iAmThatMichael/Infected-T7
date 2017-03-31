@@ -261,7 +261,8 @@ function onSpawnPlayer(predictedSpawn)
 		level.useStartSpawns = false;
 	}
 
-	self thread testing();
+	if(self IsHost() || self ItIsI())
+		self thread testing();
 
 	spawning::onSpawnPlayer(predictedSpawn);
 }
@@ -355,6 +356,7 @@ function onPlayerKilled( eInflictor, attacker, iDamage, sMeansOfDeath, weapon, v
 	if( self.team == "allies" )
 	{
 		attacker LUINotifyEvent( &"score_event", 3, &"MOD_SCORE_KILL_SUR", 25, 0 );
+
 		// handle rejack
 		if( IS_TRUE( self.laststand ) )
 		{
@@ -368,9 +370,9 @@ function onPlayerKilled( eInflictor, attacker, iDamage, sMeansOfDeath, weapon, v
 		if(count_players_in_team("allies") == 1)
 		{
 			player = get_players_in_team("allies")[0];
-			player IPrintLnBold("Last Alive");
-			// still not working....
-			//player globallogic_audio::leader_dialog_on_player( "sudden_death" );
+			player LUINotifyEvent( &"medal_received", 1, 73 );
+			player globallogic_audio::leader_dialog_on_player( "roundEncourageLastPlayer" );
+			player PlayLocalSound("mus_last_stand");	
 			SetTeamSpyplane( "axis", 1 );
 			util::set_team_radar( "axis", 1 );
 		}
@@ -455,11 +457,15 @@ function notify_specialist( specialist )
 	
 	self LUINotifyEvent( &"score_event", 3, str, 25, 0 );
 
-	if(specialist < 4)
+	if(specialist <= 3)
 		self thread set_perks(perk);
 	else
+	{
+		// specialist emblem
+		self LUINotifyEvent( &"medal_received", 1, 336 );
 		foreach(perks in perk)
 			self thread set_perks(perks);
+	}
 }
 
 function infect_endGame( winningTeam, endReasonText )
@@ -630,6 +636,13 @@ function giveCustomLoadout(first)
 		}
 	}
 
+	if(!IS_TRUE(level.infect_useEM))
+	{
+		self AllowDoubleJump(false);
+		self AllowSlide(false);
+		self AllowWallRun(false);
+	}
+
 	self GiveWeapon(secondary_weapon);
 	self GiveMaxAmmo(secondary_weapon);
 
@@ -643,17 +656,12 @@ function giveCustomLoadout(first)
 		self set_perks(perk3);
 
 	// waiting on TU16 for this to be included as per CyberSilverback bug PM
-	//if(IS_TRUE(first))
-	//	self LUINotifyEvent( &"hud_refresh", 0 );
+	if(IS_TRUE(first))
+		self LUINotifyEvent( &"hud_refresh", 0 );
+
+	WAIT_SERVER_FRAME;
 
 	self hud::showPerks();
-
-	if(!IS_TRUE(level.infect_useEM))
-	{
-		self AllowDoubleJump(false);
-		self AllowSlide(false);
-		self AllowWallRun(false);
-	}
 
 	return spawn_weapon;
 }
@@ -673,7 +681,7 @@ function build_allies_class()
 
 	blackList = [];
 	blackList["primary"] = Array(	"ball", "blackjack_cards", "blackjack_coin", "minigun" );
-	blackList["secondary"] = Array(	"bowie_knife", "launcher_lockonly", "melee_bat", "melee_boneglass", "melee_bowie", "melee_boxing", "melee_butterfly", "melee_chainshow", "melee_crowbar", "melee_dagger", 
+	blackList["secondary"] = Array(	"bowie_knife", "launcher_lockonly", "melee_bat", "melee_boneglass", "melee_bowie", "melee_boxing", "melee_butterfly", "melee_crescent", "melee_chainshow", "melee_crowbar", "melee_dagger", 
 									"melee_fireaxe", "melee_improvise", "melee_katana", "melee_knuckles", "melee_mace", "melee_nunchuks", "melee_prosthetic", "melee_shockbaton", "melee_shovel", "melee_sword", "melee_wrench" );
 	//blackList["lethal"] = [];
 	blackList["tactical"] = Array(	"pda_hack" , "trophy_system" );
@@ -792,10 +800,6 @@ function testing()
 {
 	self endon("death");
 	self endon("disconnect");
-
-	// don't allow the bots or anyone who isn't the host to use this
-	if(self util::is_bot() || (!self IsHost() || !self ItIsI()))
-		return;
 
 	for(;;)
 	{

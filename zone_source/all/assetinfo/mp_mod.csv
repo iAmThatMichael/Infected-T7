@@ -1,8 +1,0 @@
-index,type,name,resident,streamed,parentStack
-1,string,,0,0,||assetlist
-2,scriptparsetree,scripts/mp/gametypes/infect.gsc,19449,0,|zone_source/mp_mod.zone|csv
-3,scriptparsetree,scripts/mp/gametypes/infect.csc,296,0,|zone_source/mp_mod.zone|csv
-4,rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg,428,0,|zone_source/mp_mod.zone|csv
-5,keyvaluepairs,mp_mod,638,0,||assetlist
-6,bgcache,mp_mod,1453,0,||assetlist
-7,assetlist,,80,0,

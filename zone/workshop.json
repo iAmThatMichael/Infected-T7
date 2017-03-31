@@ -1,7 +1,8 @@
 {
-    "Description": "Infected for Black Ops 3",
+    "Description": "Forum: http://ugx-mods.com/forum/\r\n\r\nInfected for Black Ops 3\r\n(NOT setgametype --- set_gametype <- right one)\r\nTo enable: /set_gametype infect in console then start your map.\r\n\r\nIf this doesn't work then start any map with the mod loaded then type /set_gametype infect;map_restart\r\n\r\nThere are 4 dvars you can use to customize the game a bit:\r\n\r\nnoenhancedmovement 0 or 1 (0 = allow enhanced movement, 1 = disable enhanced movement)\r\nsurvivor_attachments 0 to 4 (up to 4 attachments allowed for both primary & secondary weapons)\r\nsurvivor_specialists 0 or 1 (0 = disable survivor specialists, 1 = allow survivor specialists)\r\ninfected_equipment 0 or 1 (0 = disable infected equipment, 1 = allow infected equipment)\r\n\r\nTo spawn a bot press USE and ATTACK buttons release and repeat to spawn them. (Example being: F + Left Mouse)\r\nFollow the source code here: https://github.com/DidUknowiPwn/Infected-T7",
     "FolderName": "mp_infected",
     "PublisherID": "771176010",
+    "Tags": "Mod,Multiplayer",
     "Thumbnail": "E:/Program Files (x86)/Steam/SteamApps/common/Call of Duty Black Ops III/mods/mp_infected/zone/mod_image.png",
     "Title": "Infected",
     "Type": "mod"

@@ -1,4 +1,0 @@
-rawfile,gamedata/gamesettings/mp/gamesettings_infect.cfg
-scriptparsetree,scripts/mp/gametypes/infect.csc
-scriptparsetree,scripts/mp/gametypes/infect.gsc
-keyvaluepairs,mp_mod

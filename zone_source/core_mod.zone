@@ -1,9 +1,0 @@
->mode,core
->type,common
-
-#include "core_mod.class"
-
-rawfile,mod.cfg
-rawfile,cp_mod.cfg
-rawfile,mp_mod.cfg
-rawfile,zm_mod.cfg
